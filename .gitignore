@@ -1,1 +1,7 @@
 proj
+bin/
+CMakeFiles
+lib/
+Makefile
+test
+CMakeCache.txt

@@ -3,6 +3,8 @@
 
 #include "performanceVisitor.hpp"
 
+class PerformanceVisitor;
+
 class Car {
 
 private:
@@ -91,8 +93,8 @@ public:
             return cost;
       }
 
-      void accept(PerformanceVisitor performanceVisitor){
-            performanceVisitor.visit(this);
+      void accept(PerformanceVisitor* performanceVisitor){
+            performanceVisitor->visit(this);
       }
 
 

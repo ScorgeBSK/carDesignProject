@@ -25,5 +25,7 @@ int main() {
       userCar->setCost(paint->getCost());
       std::cout << "$" << userCar->getCost() << std::endl;
 
+      userCar->accept(new PerformanceRatioVisitor());
+
       return 0;
 }

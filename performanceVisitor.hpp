@@ -2,6 +2,7 @@
 #define __PERFORMANCEVISITOR_HPP__
 
 #include "car.hpp"
+class Car;
 
 class PerformanceVisitor {
 public:
