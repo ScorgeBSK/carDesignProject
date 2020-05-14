@@ -1,1 +1,1 @@
-![CarDesignProject](https://github.com/ScorgeBSK/carDesignPatternProject/blob/master/CarDesignProject.png?raw=true)
+![Class Diagram](relative/path/to/CarDesignProject.png?raw=true "CarDesignProject")
