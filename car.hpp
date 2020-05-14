@@ -10,6 +10,7 @@ private:
       std::string engineType;
       double horsePower;
       double torque;
+      double weight;
       double cost;
 
 public:
@@ -20,6 +21,7 @@ public:
             std::cout << "Engine Type: " << engineType << std::endl;
             std::cout << "Horsepower: " << horsePower << std::endl;
             std::cout << "Torque: " << torque << " Lb/Ft" << std::endl;
+            std::cout << "Curb Weight: " << weight << " Lbs" << std::endl;
             std::cout << "Price: $" << cost << std::endl;
       }
 
@@ -69,6 +71,14 @@ public:
 
       double getTorque(){
             return torque;
+      }
+
+      void setWeight(double weight){
+            this->weight = weight;
+      }
+
+      double getWeight(){
+            return weight;
       }
 
       void setCost(double cost){

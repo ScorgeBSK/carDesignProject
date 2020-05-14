@@ -13,6 +13,7 @@ public:
             setEngineType("3.7L V6");
             setHorsePower(332);
             setTorque(270);
+            setWeight(3232);
             setCost(30090);
       }
 

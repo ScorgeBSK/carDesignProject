@@ -14,12 +14,12 @@ int main() {
       Car* userCar = jdmFactory->createCar(model);
       userCar->displaySpec();
 
-      std::cout << userCar->getMake() << userCar->getModel() << "w/ Door:" << std::endl;
+      std::cout << userCar->getMake() << " " << userCar->getModel() << " w/ Door:" << std::endl;
       DoorDecorator* door = new LamboDoor(userCar);
       userCar->setCost(door->getCost());
       std::cout << "$" << userCar->getCost() << std::endl;
 
-      std::cout << userCar->getMake() << userCar->getModel() << "w/ Paint:" << std::endl;
+      std::cout << userCar->getMake() << " " << userCar->getModel() << " w/ Paint:" << std::endl;
       PaintDecorator* paint = new MetallicPaint(userCar);
       userCar->setCost(paint->getCost());
       std::cout << "$" << userCar->getCost() << std::endl;
