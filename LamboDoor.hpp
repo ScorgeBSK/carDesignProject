@@ -13,8 +13,6 @@ class LamboDoor : public DoorDecorator {
                   return car->getCost() + 500;
             }
 
-      private:
-            Car* car;
 };
 
 #endif //__LAMBODOOR_HPP__

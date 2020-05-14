@@ -5,9 +5,14 @@
 
 class DoorDecorator : public Car {
       public:
-            DoorDecorator(Car*) : Car() {};
+            DoorDecorator(Car* car) : Car() {
+                  this->car = car;
+            }
 
             virtual double getCost() = 0;
+
+      protected:
+            Car* car;
 };
 
 #endif //__DOORDECORATOR_HPP__

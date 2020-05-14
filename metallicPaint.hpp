@@ -13,8 +13,6 @@ class MetallicPaint : public PaintDecorator {
                   return car->getCost() + 200;
             }
 
-      private:
-            Car* car;
 };
 
 #endif //__METALLICPAINT_HPP__
