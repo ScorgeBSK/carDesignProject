@@ -15,8 +15,8 @@ public:
                   return new Nissan_370Z();
             }
             else{
-                  return NULL;
-
+                  std::cout << "NO SUCH MODEL ERROR!" << std::endl;
+                  return new Car();
             }
       }
 };
