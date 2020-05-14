@@ -44,7 +44,7 @@ public:
       }
 
       std::string getModel(){
-            return make;
+            return model;
       }
 
       void setEngineType(std::string engineType){
