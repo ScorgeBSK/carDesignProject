@@ -1,6 +1,8 @@
 #ifndef __CAR_HPP__
 #define __CAR_HPP__
 
+#include "performanceVisitor.hpp"
+
 class Car {
 
 private:
@@ -87,6 +89,10 @@ public:
 
       double getCost(){
             return cost;
+      }
+
+      void accept(PerformanceVisitor performanceVisitor){
+            performanceVisitor.visit(this);
       }
 
 

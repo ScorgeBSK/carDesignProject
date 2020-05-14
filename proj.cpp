@@ -3,6 +3,7 @@
 #include "jdm_Car_Factory.hpp"
 #include "LamboDoor.hpp"
 #include "metallicPaint.hpp"
+#include "performanceRatioVisitor.hpp"
 int main() {
 
       std::string model;
@@ -23,12 +24,6 @@ int main() {
       PaintDecorator* paint = new MetallicPaint(userCar);
       userCar->setCost(paint->getCost());
       std::cout << "$" << userCar->getCost() << std::endl;
-
-
-
-
-
-
 
       return 0;
 }
