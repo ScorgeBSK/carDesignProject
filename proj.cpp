@@ -6,26 +6,62 @@
 #include "performanceRatioVisitor.hpp"
 int main() {
 
-      std::string model;
+      std::string userInput;
       JDM_Car_Factory* jdmFactory = new JDM_Car_Factory();
 
       std::cout << "ENTER MODEL NAME: ";
-      std::cin >> model;
+      std::cin >> userInput;
 
-      Car* userCar = jdmFactory->createCar(model);
+      Car* userCar = jdmFactory->createCar(userInput);
+      if(userCar == nullptr){
+            std::cout << "ERROR! INVALID INPUT" << std::endl;
+            exit(EXIT_FAILURE);
+      }
+
+      std::cout << std::endl;
+      std::cout << std::endl;
+
       userCar->displaySpec();
 
-      std::cout << userCar->getMake() << " " << userCar->getModel() << " w/ Door:" << std::endl;
-      DoorDecorator* door = new LamboDoor(userCar);
-      userCar->setCost(door->getCost());
-      std::cout << "$" << userCar->getCost() << std::endl;
+      std::cout << std::endl;
+      std::cout << std::endl;
+      std::cout << "**********************************************************************" << std::endl;
+      std::cout << std::endl;
+      std::cout << std::endl;
 
-      std::cout << userCar->getMake() << " " << userCar->getModel() << " w/ Paint:" << std::endl;
-      PaintDecorator* paint = new MetallicPaint(userCar);
-      userCar->setCost(paint->getCost());
-      std::cout << "$" << userCar->getCost() << std::endl;
+      std::cout << "MODIFICATION OPTIONS: " << std::endl;
+      std::cout << "DOOR (LAMBO, BUTTERFLY, NO): ";
+      std::cin >> userInput;
+
+      if(userInput == "LAMBO"){
+            std::cout << userCar->getMake() << " " << userCar->getModel() << " w/ LAMBO DOOR:" << std::endl;
+            DoorDecorator* door = new LamboDoor(userCar);
+            userCar->setCost(door->getCost());
+            std::cout << "$" << userCar->getCost() << std::endl;
+      }
+
+      std::cout << "PAINT (MATTE, METALLIC, NO): ";
+      std::cin >> userInput;
+
+      if(userInput == "METALLIC"){
+            std::cout << userCar->getMake() << " " << userCar->getModel() << " w/ METALLIC PAINT:" << std::endl;
+            PaintDecorator* paint = new MetallicPaint(userCar);
+            userCar->setCost(paint->getCost());
+            std::cout << "$" << userCar->getCost() << std::endl;
+      }
+
+      std::cout << std::endl;
+      std::cout << std::endl;
+      std::cout << "+----------+" << std::endl;
+      std::cout << "FULL SPEC:" << std::endl;
+      std::cout << "+----------+" << std::endl;
+      userCar->displaySpec();
+      std::cout << std::endl;
+      std::cout << std::endl;
 
       userCar->accept(new PerformanceRatioVisitor());
-
+      std::cout << std::endl;
+      std::cout << "TOTAL COST: $" << userCar->getCost() << std::endl;
+      std::cout << std::endl;
       return 0;
 }

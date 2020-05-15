@@ -8,6 +8,7 @@ class JDM_Car_Factory {
 public:
       Car* createCar(std::string carModel){
 
+            Car* car = nullptr;
             if(carModel == "GTR"){
                   return new Nissan_GTR();
             }
@@ -15,8 +16,7 @@ public:
                   return new Nissan_370Z();
             }
             else{
-                  std::cout << "NO SUCH MODEL ERROR!" << std::endl;
-                  return new Car();
+                  return car;
             }
       }
 };
