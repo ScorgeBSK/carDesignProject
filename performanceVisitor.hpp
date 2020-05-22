@@ -6,7 +6,7 @@ class Car;
 
 class PerformanceVisitor {
 public:
-      virtual void visit(Car* car) = 0;
+      virtual double visit(Car* car) = 0;
 };
 
 #endif

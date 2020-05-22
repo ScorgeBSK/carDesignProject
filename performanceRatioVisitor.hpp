@@ -5,10 +5,11 @@
 
 class PerformanceRatioVisitor : public PerformanceVisitor {
 public:
-      virtual void visit(Car* car) {
+      virtual double visit(Car* car) {
             double ratio = car->getHorsePower() / car->getWeight();
             std::cout.precision(2);
             std::cout << "Power To Weight Ratio: " << std::fixed << ratio << std::endl;
+            return ratio; //testing purposes
       }
 };
 
